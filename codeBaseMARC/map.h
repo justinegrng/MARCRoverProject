@@ -2,8 +2,8 @@
 // Created by flasque on 19/10/2024.
 //
 
-#ifndef UNTITLED1_MAP_H
-#define UNTITLED1_MAP_H
+#ifndef MARCROVER_MAP_H
+#define MARCROVER_MAP_H
 
 #define COST_UNDEF 65535
 /**
@@ -55,4 +55,4 @@ t_map createMapFromFile(char *);
  */
 void displayMap(t_map);
 
-#endif //UNTITLED1_MAP_H
+#endif //MARCROVER_MAP_H

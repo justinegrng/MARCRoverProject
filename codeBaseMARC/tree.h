@@ -1,13 +1,21 @@
 //
-// Created by melia on 25/10/2024.
+// Created by jugar on 11/11/2024.
 //
 
-#ifndef UNTITLED1_TREE_H
-#define UNTITLED1_TREE_H
-#include "node.h"
-typedef struct s_tree
-{
-    p_node root;
-} t_tree, *p_tree;
+#ifndef MARCROVER_TREE_H
+#define MARCROVER_TREE_H
 
-#endif //UNTITLED1_TREE_H
+//Structure d'un noeud
+typedef struct Node {
+    int value;
+    struct Node* left;
+    struct Node* right;
+    struct Node* middle;
+} Node;
+
+Node* createNode(int value);
+void freeTree(Node* root);
+int findMinLeaf(Node* root);
+int findPathToMinLeaf(Node* root, int* path, int pathLen);
+
+#endif // MARCROVER_TREE_H
