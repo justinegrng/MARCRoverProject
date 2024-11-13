@@ -19,6 +19,8 @@
 - `queue.h`
 - `stack.c`
 - `stack.h`
+- `tree.c`
+- `tree.h`
 <details>
 <summary> 📁 maps </summary>
   
