@@ -15,4 +15,6 @@ add_executable(MARCRover main.c
         stack.c
         stack.h
         tree.c
-        tree.h)
+        tree.h
+        menu.c
+        menu.h)
