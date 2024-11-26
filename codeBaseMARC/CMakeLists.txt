@@ -17,5 +17,4 @@ add_executable(untitled1 main.c
         tree.c
         tree.h
         menu.c
-        menu.h
-        menu.c)
+        menu.h)
