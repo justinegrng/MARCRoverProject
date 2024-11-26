@@ -6,3 +6,9 @@
 #include <limits.h>
 #include "tree.h"
 #include <time.h>
+
+/**
+ * @brief Function to create a new node
+ * @param data : the data to store in the node
+ * @return the new node
+ */
