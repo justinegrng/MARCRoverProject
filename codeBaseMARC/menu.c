@@ -7,20 +7,23 @@
 #include "menu.h"
 #include "loc.h"
 #include "moves.h"
+#include "tree.h"
 
 // Function to display the menu
 void printMenu() {
-    printf("1. Afficher l'arbre\n");
+    printf("1. Arbre avec 3 choix parmi 4 ou 5 valeurs possibles\n");
     printf("2. Afficher la feuille minimum\n");
     printf("3. Afficher le chemin vers la feuille minimum\n");
     printf("4. Sortir\n");
+    printf("\n");
 }
 
 // Function to handle the user's choice
 void interactiveMenu() {
     int choice;
     printMenu();
-    printf("Entrez votre choix: ");
+    printf("Entrez votre choix: \n");
+    printf("\n");
     int result = scanf("%d", &choice);
 
     if (result != 1) {
@@ -30,17 +33,26 @@ void interactiveMenu() {
 
     switch (choice) {
         case 1:
-            printf("Afficher l'arbre sélectionné.\n");
-            // Code pour afficher l'arbre ici
+            printf("\n");
+            TreeNode* root = createNode(0);
+            buildSimpleTree(root);
+
+            int minLeaf = findMinLeaf(root);
+            printf("Valeur de la feuille minimum: %d\n", minLeaf);
+            printf("Chemin vers la feuille minimum: ");
+            printPathToMinLeaf(root, minLeaf);
+            printf("\n");
+            freeTree(root);
+            printf("\n");
             interactiveMenu();
             return;
         case 2:
-            printf("Afficher la feuille minimum sélectionnée.\n");
+            printf("\n");
             // FOnction
             interactiveMenu();
             return;
         case 3:
-            printf("Afficher le chemin vers la feuille minimum sélectionné.\n");
+            printf("\n");
             // Fonction
             interactiveMenu();
             return;
