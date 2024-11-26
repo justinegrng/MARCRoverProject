@@ -7,4 +7,5 @@
 
 #endif //MARCROVER_MENU_H
 
-void displayMenu();
+void printMenu();
+void interactiveMenu();
