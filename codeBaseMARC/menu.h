@@ -7,5 +7,12 @@
 
 #endif //MARCROVER_MENU_H
 
+/**
+ * @brief Function to print the menu
+ */
 void printMenu();
+
+/**
+ * @brief Function to display the interactive menu
+ */
 void interactiveMenu();
