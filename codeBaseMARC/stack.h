@@ -2,8 +2,8 @@
 // Created by flasque on 19/10/2024.
 //
 
-#ifndef MARCROVER_STACK_H
-#define MARCROVER_STACK_H
+#ifndef UNTITLED1_STACK_H
+#define UNTITLED1_STACK_H
 
 /**
  * @brief Structure for the stack of integers
@@ -45,4 +45,4 @@ int pop(t_stack *);
 int top(t_stack);
 
 
-#endif //MARCROVER_STACK_H
+#endif //UNTITLED1_STACK_H

@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.27)
-project(MARCRover C)
+project(untitled1 C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(MARCRover main.c
+add_executable(untitled1 main.c
         loc.c
         loc.h
         moves.c

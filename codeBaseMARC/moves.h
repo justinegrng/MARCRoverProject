@@ -2,8 +2,8 @@
 // Created by flasque on 19/10/2024.
 //
 
-#ifndef MARCROVER_MOVES_H
-#define MARCROVER_MOVES_H
+#ifndef UNTITLED1_MOVES_H
+#define UNTITLED1_MOVES_H
 
 #include "loc.h"
 
@@ -50,4 +50,4 @@ t_localisation move(t_localisation, t_move);
  */
 void updateLocalisation(t_localisation *, t_move);
 
-#endif //MARCROVER_MOVES_H
+#endif //UNTITLED1_MOVES_H

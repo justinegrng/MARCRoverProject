@@ -2,8 +2,8 @@
 // Created by flasque on 19/10/2024.
 //
 
-#ifndef MARCROVER_LOC_H
-#define MARCROVER_LOC_H
+#ifndef UNTITLED1_LOC_H
+#define UNTITLED1_LOC_H
 
 /**
  * @brief Enum for the orientation of the robot (NORTH, EAST, SOUTH, WEST)
@@ -80,4 +80,4 @@ t_position UP(t_position);
  */
 t_position DOWN(t_position);
 
-#endif //MARCROVER_LOC_H
+#endif //UNTITLED1_LOC_H

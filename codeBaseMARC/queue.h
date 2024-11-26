@@ -2,8 +2,8 @@
 // Created by flasque on 19/10/2024.
 //
 
-#ifndef MARCROVER_QUEUE_H
-#define MARCROVER_QUEUE_H
+#ifndef UNTITLED1_QUEUE_H
+#define UNTITLED1_QUEUE_H
 #include "loc.h"
 /**
  * @brief Structure for the queue of integers
@@ -38,4 +38,4 @@ void enqueue(t_queue *,t_position);
  */
 t_position dequeue(t_queue *);
 
-#endif //MARCROVER_QUEUE_H
+#endif //UNTITLED1_QUEUE_H
