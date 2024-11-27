@@ -93,10 +93,10 @@ int isOutOfMap(t_map map, t_localisation loc);
 int isAtBaseStation(t_map map, t_localisation loc);
 
 /**
- * @brief function to get a random move
- * @param none
- * @return a random move
+ * @brief function to get a random sequence of moves
+ * @param N : the number of moves
+ * @return the sequence of moves
  */
-t_move getRandomMove();
+t_move getRandomMove(int N);
 
 #endif //UNTITLED1_MOVES_H
