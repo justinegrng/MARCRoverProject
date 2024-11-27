@@ -23,6 +23,7 @@ void addChild(Node* parent, Node* child);
 void buildTree(Node* root, t_map map, int level);
 void findOptimalPath(Node* root, int* min_value, Node** optimal_leaf);
 void getOptimalSequence(Node* leaf, t_move* sequence, int* length);
+void printTree(Node* root, int level);
 
 int isOutOfMap(t_map map, t_localisation loc);
 int isOnCrevasse(t_map map, t_localisation loc);

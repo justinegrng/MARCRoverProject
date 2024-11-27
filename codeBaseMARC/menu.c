@@ -40,12 +40,10 @@ void interactiveMenu() {
 #else
         map = createMapFromFile("../maps/example1.map");
 #endif
-        t_localisation loc = loc_init(0, 0, NORTH);
-        Node* root = createNode(loc, map.soils[loc.pos.y][loc.pos.x]);
+        Node* root = createNode(loc_init(0, 0, NORTH), map.soils[0][0]);
         buildTree(root, map, 0);
         int min_value = INT_MAX;
         Node* optimal_leaf = NULL;
-        t_move sequence[5];
         int length;
         switch (choice) {
             case 1:
@@ -72,18 +70,13 @@ void interactiveMenu() {
                 return;
             case 3:
                 findOptimalPath(root, &min_value, &optimal_leaf);
-                printf("Minimum value: %d\n", min_value);
+                getOptimalSequence(optimal_leaf, NULL, &length);
+                t_move sequence[length];
                 getOptimalSequence(optimal_leaf, sequence, &length);
-                printf("Optimal leaf: %d %d\n", optimal_leaf->loc.pos.x, optimal_leaf->loc.pos.y);
+                applyOptimalSequence(&root->loc, sequence, length);
+                printf("Arbre N-aire:\n");
+                printTree(root, 0);
 
-                printf("Chemin optimal: ");
-                for (int i = 0; i < length; i++) {
-                    printf("%d ", sequence[i]);
-                }
-                printf("\n");
-
-                applyOptimalSequence(&loc, sequence, length);
-                displayMapWithRover(map, loc);
                 interactiveMenu();
                 return;
             case 4:

@@ -2,6 +2,7 @@
 // Created by jugar on 11/11/2024.
 //
 #include <stdlib.h>
+#include <stdio.h>
 #include <limits.h>
 #include "tree.h"
 #include "loc.h"
@@ -70,5 +71,20 @@ void getOptimalSequence(Node* leaf, t_move* sequence, int* length) {
         t_move temp = sequence[i];
         sequence[i] = sequence[*length - 1 - i];
         sequence[*length - 1 - i] = temp;
+    }
+
+}
+void printTree(Node* root, int level) {
+    if (root == NULL) {
+        return;
+    }
+
+    for (int i = 0; i < level; i++) {
+        printf("  ");
+    }
+    printf("Node (Value: %d, Position: (%d, %d))\n", root->value, root->loc.pos.x, root->loc.pos.y);
+
+    for (int i = 0; i < root->child_count; i++) {
+        printTree(root->children[i], level + 1);
     }
 }
