@@ -62,6 +62,9 @@ void displayMapWithRover(t_map map, t_localisation loc);
 
 
 void applyOptimalSequence(t_localisation* loc, t_move* sequence, int length);
-
+int isOnCrevasse(t_map map, t_localisation loc);
+int isOutOfMap(t_map map, t_localisation loc);
+int isAtBaseStation(t_map map, t_localisation loc);
+t_move getRandomMove();
 
 #endif //UNTITLED1_MOVES_H

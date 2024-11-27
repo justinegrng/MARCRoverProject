@@ -13,10 +13,8 @@ void printMenu() {
     printf("1. Afficher la carte\n");
     printf("2. Afficher la carte avec le Rover en (0,0)\n");
     printf("3. Construire un arbre N-aire\n");
-    printf("4. \n");
-    printf("5. \n");
-    printf("6. \n");
-    printf("7. Sortir\n");
+    printf("4. Déplacer le Rover\n");
+    printf("5. Sortir\n");
     printf("\n");
 }
 
@@ -79,15 +77,18 @@ void interactiveMenu() {
                 interactiveMenu();
                 return;
             case 4:
-                interactiveMenu();
-                return;
+                printf("Donne les coordonées x et y\n");
+                scanf("%d %d", &root->loc.pos.x, &root->loc.pos.y);
+                if (isOnCrevasse(map, root->loc)) {
+                    printf("Le Rover est tombé dans une crevasse.\n");
+                } else if (isOutOfMap(map, root->loc)) {
+                    printf("Le Rover est sorti de la carte.\n");
+                } else if (isAtBaseStation(map, root->loc)) {
+                    printf("Le Rover est arrivé à la base.\n");
+                } else {
+                    printf("Le Rover n'est pas arrivé à la base.\n");
+                }
             case 5:
-                interactiveMenu();
-                return;
-            case 6:
-                interactiveMenu();
-                return;
-            case 7:
                 printf("Sortie.\n");
                 exit(0);
             default:
