@@ -3,6 +3,10 @@
 //
 
 #include "moves.h"
+#include <string.h>
+#include <stdio.h>
+#include "map.h"
+#include <stdlib.h>
 
 /* prototypes of local functions */
 /* local functions are used only in this file, as helper functions */
@@ -152,4 +156,71 @@ void updateLocalisation(t_localisation *p_loc, t_move m)
 {
     *p_loc = move(*p_loc, m);
     return;
+}
+
+void displayMapWithRover(t_map map, t_localisation loc) {
+    for (int i = 0; i < map.y_max; i++) {
+        for (int rep = 0; rep < 3; rep++) {
+            for (int j = 0; j < map.x_max; j++) {
+                if (i == loc.pos.y && j == loc.pos.x && rep == 1) {
+                    printf(" R ");
+                } else {
+                    char c[4];
+                    switch (map.soils[i][j]) {
+                        case BASE_STATION:
+                            if (rep == 1) {
+                                strcpy(c, " B ");
+                            } else {
+                                strcpy(c, "   ");
+                            }
+                            break;
+                        case PLAIN:
+                            strcpy(c, "---");
+                            break;
+                        case ERG:
+                            strcpy(c, "~~~");
+                            break;
+                        case REG:
+                            strcpy(c, "^^^");
+                            break;
+                        case CREVASSE:
+                            sprintf(c, "%c%c%c", 219, 219, 219);
+                            break;
+                        default:
+                            strcpy(c, "???");
+                            break;
+                    }
+                    printf("%s", c);
+                }
+            }
+            printf("\n");
+        }
+    }
+}
+
+int isAtBaseStation(t_map map, t_localisation loc)
+{
+    return map.soils[loc.pos.y][loc.pos.x] == BASE_STATION;
+}
+
+int isOutOfMap(t_map map, t_localisation loc)
+{
+    return loc.pos.x < 0 || loc.pos.x >= map.x_max || loc.pos.y < 0 || loc.pos.y >= map.y_max;
+}
+
+int isOnCrevasse(t_map map, t_localisation loc)
+{
+    return map.soils[loc.pos.y][loc.pos.x] == CREVASSE;
+}
+
+t_move getRandomMove()
+{
+    return (t_move)(rand()%7);
+}
+
+
+void applyOptimalSequence(t_localisation* loc, t_move* sequence, int length) {
+    for (int i = 0; i < length; i++) {
+        updateLocalisation(loc, sequence[i]);
+    }
 }

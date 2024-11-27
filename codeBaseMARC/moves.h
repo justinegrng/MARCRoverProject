@@ -6,6 +6,7 @@
 #define UNTITLED1_MOVES_H
 
 #include "loc.h"
+#include "map.h"
 
 /**
  * @brief Array of strings for the possible moves of the robot
@@ -49,5 +50,18 @@ t_localisation move(t_localisation, t_move);
  * @return none
  */
 void updateLocalisation(t_localisation *, t_move);
+
+/**
+ * @brief function to rotate the robot according to a move and its actual orientation
+ * @param ori : the actual orientation of the robot
+ * @param move : the move to do
+ * @return the new orientation of the robot
+ */
+void displayMapWithRover(t_map map, t_localisation loc);
+
+
+
+void applyOptimalSequence(t_localisation* loc, t_move* sequence, int length);
+
 
 #endif //UNTITLED1_MOVES_H
