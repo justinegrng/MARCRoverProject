@@ -52,19 +52,51 @@ t_localisation move(t_localisation, t_move);
 void updateLocalisation(t_localisation *, t_move);
 
 /**
- * @brief function to rotate the robot according to a move and its actual orientation
- * @param ori : the actual orientation of the robot
- * @param move : the move to do
- * @return the new orientation of the robot
+ * @brief function to display the map with the rover
+ * @param map : the map to display
+ * @param loc : the localisation of the rover
+ * @return none
  */
 void displayMapWithRover(t_map map, t_localisation loc);
 
-
-
+/**
+ * @brief function to apply a sequence of moves to a localisation
+ * @param loc : the localisation of the robot
+ * @param sequence : the sequence of moves
+ * @param length : the length of the sequence
+ * @return none
+ */
 void applyOptimalSequence(t_localisation* loc, t_move* sequence, int length);
+
+/**
+ * @brief function to check if the robot is on a crevasse
+ * @param map
+ * @param loc
+ * @return
+ */
 int isOnCrevasse(t_map map, t_localisation loc);
+
+/**
+ * @brief function to check if the robot is out of the map
+ * @param map : the map
+ * @param loc : the localisation of the robot
+ * @return 1 if the robot is out of the map, 0 otherwise
+ */
 int isOutOfMap(t_map map, t_localisation loc);
+
+/**
+ * @brief function to check if the robot is at the base station
+ * @param map : the map
+ * @param loc : the localisation of the robot
+ * @return 1 if the robot is at the base station, 0 otherwise
+ */
 int isAtBaseStation(t_map map, t_localisation loc);
+
+/**
+ * @brief function to get a random move
+ * @param none
+ * @return a random move
+ */
 t_move getRandomMove();
 
 #endif //UNTITLED1_MOVES_H
