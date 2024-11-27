@@ -22,6 +22,11 @@ void printMenu() {
 
 void interactiveMenu() {
     int choice;
+    int min_value = INT_MAX;
+    Node* root = createNode(loc_init(0, 0, NORTH), 0);
+    Node* optimal_leaf;
+    t_move sequence[5];
+    int length;
 
     while (1) {
         printMenu();
@@ -40,11 +45,7 @@ void interactiveMenu() {
 #else
         map = createMapFromFile("../maps/example1.map");
 #endif
-        Node* root = createNode(loc_init(0, 0, NORTH), map.soils[0][0]);
-        buildTree(root, map, 0);
-        int min_value = INT_MAX;
-        Node* optimal_leaf = NULL;
-        int length;
+
         switch (choice) {
             case 1:
                 printf("Map created with dimensions %d x %d\n", map.y_max, map.x_max);
@@ -71,7 +72,6 @@ void interactiveMenu() {
             case 3:
                 findOptimalPath(root, &min_value, &optimal_leaf);
                 getOptimalSequence(optimal_leaf, NULL, &length);
-                t_move sequence[length];
                 getOptimalSequence(optimal_leaf, sequence, &length);
                 applyOptimalSequence(&root->loc, sequence, length);
                 printf("Arbre N-aire:\n");
