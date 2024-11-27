@@ -76,7 +76,6 @@ void interactiveMenu() {
                 applyOptimalSequence(&root->loc, sequence, length);
                 printf("Arbre N-aire:\n");
                 printTree(root, 0);
-
                 interactiveMenu();
                 return;
             case 4:
