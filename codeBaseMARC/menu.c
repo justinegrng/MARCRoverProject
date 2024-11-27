@@ -80,14 +80,15 @@ void interactiveMenu() {
                 printf("Donne les coordonées x et y\n");
                 scanf("%d %d", &root->loc.pos.x, &root->loc.pos.y);
                 if (isOnCrevasse(map, root->loc)) {
-                    printf("Le Rover est tombé dans une crevasse.\n");
+                    printf("Le Rover est dans une crevasse.\n");
                 } else if (isOutOfMap(map, root->loc)) {
                     printf("Le Rover est sorti de la carte.\n");
                 } else if (isAtBaseStation(map, root->loc)) {
-                    printf("Le Rover est arrivé à la base.\n");
+                    printf("Le Rover est a la base.\n");
                 } else {
-                    printf("Le Rover n'est pas arrivé à la base.\n");
+                    printf("Le Rover n'est pas arrive a la base.\n");
                 }
+                interactiveMenu();
             case 5:
                 printf("Sortie.\n");
                 exit(0);
