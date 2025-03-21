@@ -1,12 +1,14 @@
 # MARCRoverProject 🤖 Rover Run !
-[Lien vers le dépôt GitHub](https://github.com/justinegrng/MARCRoverProject.git)
+![Bannière GitHub Projet MARCRover](https://github.com/user-attachments/assets/caf2dc6c-530e-4501-99e5-d717c883eb2f)
 
-## Membres du projet
+## Pour commencer ...
+[Lien vers le dépôt GitHub](https://github.com/justinegrng/MARCRoverProject.git)
+### Membres du projet
 > Justine GARNUNG  
 > Yéléna SAINTE-ROSE  
 > Mélia TANGUY
 
-## Files organization
+### Files organization
 > [!TIP]
 > Il suffit de cliquer ci-dessous sur "📁 MARCRoverProject" afin de visualiser l'arborescence de notre projet.
 
