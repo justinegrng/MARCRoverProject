@@ -9,7 +9,7 @@
 > Mélia TANGUY
 
 ### Files organization
-> [!TIP]
+> [!IMPORTANT]
 > Il suffit de cliquer ci-dessous sur "📁 MARCRoverProject" afin de visualiser l'arborescence de notre projet.
 
 
